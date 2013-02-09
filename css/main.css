@@ -1,0 +1,104 @@
+
+/*******************************************************************
+ * General styles
+ */
+input, select {
+  vertical-align: middle;
+}
+
+
+
+/*******************************************************************
+ * big elements styles
+ */
+body {
+  font-family: "Open Sans", sans serif !important;
+  font-size: 11px;
+  color: #111;
+  margin: 0;
+}
+
+header {
+/*  width: 100%;*/
+  margin: 0 auto;
+  padding: 50px 25px 0 25px;
+  background: url("../images/home_bkg.jpg");
+  color: white;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+
+/*******************************************************************
+ * Particular elements styles
+ */
+header .logo {
+  background: url("../images/logo_urbita_home.png");
+  width: 191px;
+  height: 43px;
+}
+
+.mainoptions-container .lenguage-selector,
+.mainoptions-container .log-container {
+  display: inline-block;
+}
+
+.log-container .login,
+.log-container .signup {
+  display: inline-block;
+}
+
+/**
+ * main Search
+ */
+.search-container {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.search-container .title {
+  color: white;
+  display: block;
+  clear: both;
+  color: white;
+  display: block;
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: -10px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+.search-container .search-box-container {
+
+}
+.search-container .search-box-container input.search-box {
+  border: 0 none;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -o-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  color: #999;
+  font-size: 20px;
+  height: 50px;
+  letter-spacing: -1px;
+  width: 700px;
+  position: relative;
+}
+
+
+.search-container .search-button {
+  background: url("../images/btn_search_home.png") no-repeat scroll 0 0 transparent;
+  border: 0 none;
+  cursor: pointer;
+  height: 40px;
+  position: relative;
+  right: 50px;
+  bottom: 8px;
+  width: 40px;
+}
