@@ -3,28 +3,31 @@ define([
     'hbs',
     'jquery',
     //'jquerymobile',
+    'views/placecollectionview',
     'text!templates/home.tpl.html'
-   ], function(  Backbone, Handlebars, $, homeTemplate ){
+   ], function(  Backbone, Handlebars, $, PlacesCollectionView, homeTemplate ){
       var HomeView = Backbone.View.extend({
 
-      template: Handlebars.compile(prizeTemplate),
+      template: Handlebars.compile(homeTemplate),
+
+      places: null,
 
       events: {
-        "mouseover" : "highlightPlace"
       },
 
-      initialize: function(){
-        _.bindAll(this, 'render', 'highlightPlace');
-        this.model.bind('change', this.render() );
+      initialize: function() {
+        this.render();
+
+        this.places = places;
+        var placesView = new PlacesCollectionView({
+          el: '.places-container',
+          collection: places
+        });
       },
 
-      render: function(){
-        this.$el.html( this.template( this.model.toJSON() ) );
+      render: function() {
+        this.$el.html( this.template() );
         return this;
-      },
-
-      highlightPlace: function() {
-        alert(this.model.get('place') + ' -> on mouse over!');
       }
 
     });

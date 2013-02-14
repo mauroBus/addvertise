@@ -9,16 +9,10 @@ define([
     var PlaceCollection = Backbone.Collection.extend({
 
       model: PlaceModel,
+      url: 'app/config/places.config.json',
 
-      // parameters for all the services
-      defaultParameters : {
-        plataforma : Config.platform,
-        encoding : Config.encoding
-      },
-
-      url : function () {
-        var baseUrl = '';
-        return baseUrl;
+      parse: function(res) {
+        return res.places;
       }
 
     });
