@@ -3,32 +3,32 @@
     {
       "id" : "0",
       "title" : "Necochea",
-      "description" : "---"
+      "shortDescription" : "---"
     },
     {
       "id" : "1",
       "title" : "Punta del este",
-      "description" : "---"
+      "shortDescription" : "---"
     },
     {
       "id" : "2",
       "title" : "Mar del plata",
-      "description" : "---"
+      "shortDescription" : "---"
     },
     {
       "id" : "3",
       "title" : "Miramar",
-      "description" : "---"
+      "shortDescription" : "---"
     },
     {
       "id" : "4",
       "title" : "Pinamar",
-      "description" : "---"
+      "shortDescription" : "---"
     },
     {
       "id" : "5",
       "title" : "Carilo",
-      "description" : "Contains objects shared across all cloud content"
+      "shortDescription" : "Contains objects shared across all cloud content"
     }
   ]
 }

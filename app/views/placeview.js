@@ -9,6 +9,8 @@ define([
 
       template: Handlebars.compile(placeTemplate),
 
+      tagName: 'li',
+
       events: {
         'mouseover': 'highlightPlace',
         'mouseout': 'showNormalPlace'
@@ -17,6 +19,7 @@ define([
       initialize: function(){
         _.bindAll(this, 'render', 'highlightPlace', 'showNormalPlace');
         this.model.bind('change', this.render());
+        this.showNormalPlace();
       },
 
       render: function(){

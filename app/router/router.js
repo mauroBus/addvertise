@@ -8,7 +8,7 @@ define([
     // collections
     'collections/placecollection',
     // views
-    'views/homeview',
+    'views/homeview'
     //'views/placeview',
     //'views/placecollectionview'
   ],
@@ -22,7 +22,7 @@ define([
 
       homePage : function() {
         places = new PlaceCollection();
-        places.fetch({update: true, remove: false});
+        places.fetch({update: true, remove: false, add: true});
 
         var home = new HomeView({el: 'body', 'places': places});
         home.render();

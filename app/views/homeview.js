@@ -19,8 +19,11 @@ define([
         this.render();
 
         this.places = places;
+
+        console.log($('.places-list'));
+
         var placesView = new PlacesCollectionView({
-          el: '.places-container',
+          el: 'ul.places-list',
           collection: places
         });
       },
