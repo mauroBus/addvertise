@@ -3,26 +3,26 @@ define([
     'hbs',
     'jquery',
     //'jquerymobile',
-    'views/placecollectionview',
+    'views/itemcollectionview',
     'text!templates/home.tpl.html'
-   ], function(  Backbone, Handlebars, $, PlacesCollectionView, homeTemplate ){
+   ], function(  Backbone, Handlebars, $, ItemsCollectionView, homeTemplate ){
       var HomeView = Backbone.View.extend({
 
       template: Handlebars.compile(homeTemplate),
 
-      places: null,
+      items: null,
 
-      placesView: null,
+      itemsView: null,
 
       events: {
       },
 
       initialize: function() {
-        this.places = this.options.places;
+        this.items = this.options.items;
 
-        this.placesView = new PlacesCollectionView({
-          el: 'ul.places-list',
-          collection: places
+        this.itemsView = new ItemsCollectionView({
+          el: 'ul.items-list',
+          collection: this.items
         });
 
         this.render();
@@ -30,7 +30,7 @@ define([
 
       render: function() {
         this.$el.html(this.template());
-        this.placesView.setElement('ul.places-list');
+        this.itemsView.setElement('ul.items-list');
         return this;
       }
 

@@ -4,15 +4,13 @@
 define([
     'backbone',
     // models
-    'models/placemodel',
+    'models/itemmodel',
     // collections
-    'collections/placecollection',
+    'collections/itemcollection',
     // views
     'views/homeview'
-    //'views/placeview',
-    //'views/placecollectionview'
   ],
-  function(Backbone, PlaceModel, PlaceCollection, HomeView/*, PlaceView, PlaceCollectionView*/) {
+  function(Backbone, ItemModel, ItemCollection, HomeView) {
 
     var AppRouter = Backbone.Router.extend({
 
@@ -21,10 +19,10 @@ define([
       },
 
       homePage : function() {
-        places = new PlaceCollection();
-        places.fetch({update: true, remove: false, add: true});
+        itmes = new ItemCollection();
+        items.fetch({update: true, remove: false, add: true});
 
-        var home = new HomeView({el: 'body', 'places': places});
+        var home = new HomeView({el: 'body', 'items': items});
         home.render();
       }
 

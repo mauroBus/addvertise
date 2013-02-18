@@ -3,23 +3,23 @@ define([
     'hbs',
     'jquery',
     //'jquerymobile',
-    'text!templates/place.tpl.html'
-   ], function(  Backbone, Handlebars, $, placeTemplate ){
+    'text!templates/item.tpl.html'
+   ], function(  Backbone, Handlebars, $, itemTemplate ){
       var HomeView = Backbone.View.extend({
 
-      template: Handlebars.compile(placeTemplate),
+      template: Handlebars.compile(itemTemplate),
 
       tagName: 'li',
 
       events: {
-        'mouseover': 'highlightPlace',
-        'mouseout': 'showNormalPlace'
+        'mouseover': 'highlightItem',
+        'mouseout': 'showNormalItem'
       },
 
       initialize: function(){
-        _.bindAll(this, 'render', 'highlightPlace', 'showNormalPlace');
+        _.bindAll(this, 'render', 'highlightItem', 'showNormalItem');
         this.model.bind('change', this.render());
-        this.showNormalPlace();
+        this.showNormalItem();
       },
 
       render: function(){
@@ -27,11 +27,11 @@ define([
         return this;
       },
 
-      highlightPlace: function() {
+      highlightItem: function() {
         this.$el.css({'border': '5px solid blue'});
       },
 
-      showNormalPlace: function() {
+      showNormalItem: function() {
         this.$el.css({'border': '1px solid black'});
       }
 
