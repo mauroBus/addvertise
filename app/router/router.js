@@ -19,11 +19,12 @@ define([
       },
 
       homePage : function() {
-        itmes = new ItemCollection();
-        items.fetch({update: true, remove: false, add: true});
+        var items = new ItemCollection();
 
         var home = new HomeView({el: 'body', 'items': items});
         home.render();
+
+        items.fetch({update: true, remove: false, add: true});
       }
 
     });
