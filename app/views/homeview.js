@@ -12,24 +12,25 @@ define([
 
       places: null,
 
+      placesView: null,
+
       events: {
       },
 
       initialize: function() {
-        this.render();
+        this.places = this.options.places;
 
-        this.places = places;
-
-        console.log($('.places-list'));
-
-        var placesView = new PlacesCollectionView({
+        this.placesView = new PlacesCollectionView({
           el: 'ul.places-list',
           collection: places
         });
+
+        this.render();
       },
 
       render: function() {
-        this.$el.html( this.template() );
+        this.$el.html(this.template());
+        this.placesView.setElement('ul.places-list');
         return this;
       }
 

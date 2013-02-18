@@ -14,15 +14,18 @@ define([
       },
 
       initialize: function() {
-        _.bindAll(this, 'render', 'appendPlace');
+        _.bindAll(this, 'render', 'appendPlace', 'clearElements');
         this.collection.bind('add', this.appendPlace);
+        this.collection.bind('reset', this.clearElements);
 
-        console.log($('ul.places-list'));
-        $('ul.places-list').append('<div>holaa</div>');
-        this.$el.append('<div class="123">NADA HERE</div>');
-        //if (this.collection.length > 0) {
-          //this.render();
-        //}
+        if (this.collection.length > 0) {
+          this.render();
+        }
+      },
+
+      clearElements: function() {
+        console.log('clearing elements');
+        this.$el.html('');
       },
 
       render: function() {
@@ -33,9 +36,8 @@ define([
       },
 
       appendPlace: function(place) {
-        console.log('adding a new place - new view');
         var newPlaceView = new PlaceView({model: place});
-        $(this.el).append(newPlaceView.render().el);
+        this.$el.append(newPlaceView.render().el);
       }
     });
 

@@ -12,7 +12,7 @@ input, select {
  * big elements styles
  */
 body {
-  font-family: "Open Sans", sans serif !important;
+  font-family: "Open Sans", sans serif;
   font-size: 11px;
   color: #111;
   margin: 0;
@@ -22,7 +22,7 @@ header {
 /*  width: 100%;*/
   margin: 0 auto;
   padding: 50px 25px 0 25px;
-  background: url("../images/home_bkg.jpg");
+  /*background: url("../images/home_bkg.jpg");*/
   color: white;
 }
 
@@ -65,8 +65,6 @@ header .logo {
   color: white;
   display: block;
   clear: both;
-  color: white;
-  display: block;
   font-size: 100px;
   font-weight: 700;
   letter-spacing: -10px;
