@@ -1,5 +1,28 @@
 <div class="place">
-  <div>HELLO WORLDDDDDDDDDDD</div>
-  <div class="place-title">{{title}}</div>
-  <div class="place-description">{{shortDescription}}</div>
+  <a href="{{itemhref}}">
+    <img src="images/shoes/{{image}}" alt="image: {{title}}"></img>
+    <div class="item-sub-image">
+      <img src="images/shoes/{{customizeImg}}" alt="Customize It" height="14" width="97">
+    </div>
+  </a>
+
+  <div class="itemDescription">
+    <div class="item-options">
+      <span class="logo-little"></span>
+      <a class="item-view-more" href="#">view larger and Morecolors</a>
+    </div>
+    <div class="item-title">
+      <a href="">{{title}}</a>
+    </div>
+    <!-- <div class="item-description">{{shortDescription}}</div> -->
+    <div class="item-value">
+      <span class="item-stars">
+        {{#if stars}}
+          <span class="icon-stared"></span>
+          <span class="icon-stars-off"></span>
+        {{/if}}
+      </span>
+      <span class="item-price">{{prize}}</span>
+    </div>
+  </div>
 </div>
