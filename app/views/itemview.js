@@ -25,9 +25,12 @@ define([
 
       render: function() {
         this.$el.html( this.template(this.model.toJSON()) );
-        if (this.model.get('stars')) {
-          console.log('element:    ' + this.$el.find('.icon-stared'));
+
+        var itemStars = this.model.get('stars');
+        if (itemStars) {
+          // console.log('element:    ' + this.$el.find('.icon-stared'));
           this.$el.find('.icon-stared').addClass('item-stars-width' + this.model.get('stars'));
+          this.$el.find('.icon-stars-off').addClass('item-stars-width' + (5 - itemStars));
         }
         return this;
       },

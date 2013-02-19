@@ -7,7 +7,7 @@
 
   background-color: #fff;
   margin-right: 11px;
-  padding: 5px 0;
+  padding: 8px;
   height: 266px;
 
   float: left;
@@ -33,5 +33,47 @@
 }
 
 .items-list li .icon-stared {
-  background: url('images/shoes/orange_star.png');
+  background: url('../images/shoes/orange_star.png');
+}
+.items-list li .icon-stars-off {
+  background: url('../images/shoes/gray_star.png');
+  position: relative;
+  left: -3px;
+}
+
+.items-list li a.item-image {
+  margin: 0 5px 5px 5px;
+  display: block;
+  text-align: center;
+}
+
+.item-stars .icon-stars {
+  display: inline-block;
+  height: 8px;
+}
+
+.item-price {
+  float: right;
+}
+.items-list .item-value {
+
+}
+
+
+.items-list .item-sub-image {
+  min-height: 17px;
+}
+
+.item-description a {
+  color: #666 !important;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+
+.item-value {
+  margin-top: 8px;
+}
+.item-value .item-price {
+  font-size: 120%;
 }

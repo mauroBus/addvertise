@@ -1,12 +1,14 @@
 <div class="place">
-  <a href="{{itemhref}}">
+  <a class="item-image" href="{{itemhref}}">
     <img src="images/shoes/{{image}}" alt="image: {{title}}"></img>
     <div class="item-sub-image">
-      <img src="images/shoes/{{customizeImg}}" alt="Customize It" height="14" width="97">
+      {{#if customizeImg}}
+        <img src="images/shoes/{{customizeImg}}" alt="Customize It" height="14" width="97">
+      {{/if}}
     </div>
   </a>
 
-  <div class="itemDescription">
+  <div class="item-description">
     <div class="item-options">
       <span class="logo-little"></span>
       <a class="item-view-more" href="#">view larger and Morecolors</a>
@@ -18,8 +20,8 @@
     <div class="item-value">
       <span class="item-stars">
         {{#if stars}}
-          <span class="icon-stared"></span>
-          <span class="icon-stars-off"></span>
+          <span class="icon-stars icon-stared"></span>
+          <span class="icon-stars icon-stars-off"></span>
         {{/if}}
       </span>
       <span class="item-price">{{prize}}</span>
