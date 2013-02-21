@@ -15,16 +15,24 @@ define([
     var AppRouter = Backbone.Router.extend({
 
       routes : {
-        '*action' : 'homePage'
+        'item:itemNumber': 'loadItemPage',
+        '*action': 'homePage'
       },
 
-      homePage : function() {
-        var items = new ItemCollection();
+      items: null,
 
-        var home = new HomeView({el: 'body', 'items': items});
+      homePage : function() {
+        this.items = new ItemCollection();
+
+        var home = new HomeView({el: 'body', 'items': this.items});
         home.render();
 
-        items.fetch({update: true, remove: false, add: true});
+        this.items.fetch({update: true, remove: false, add: true});
+      },
+
+      loadItemPage: function(item) {
+        console.log('loading item page for item id:  ' + item);
+        this.items.get(item).set({'shortDescription': 'blablabla'});
       }
 
     });

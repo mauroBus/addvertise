@@ -2,7 +2,6 @@ define([
     'backbone',
     'hbs',
     'jquery',
-    //'jquerymobile',
     'text!templates/item.tpl.html',
     'config/item.interaction'
    ], function(Backbone, Handlebars, $, itemTemplate, ItemConfig) {
@@ -11,6 +10,7 @@ define([
       template: Handlebars.compile(itemTemplate),
 
       tagName: 'li',
+      MAX_STARS: 5,
 
       events: {
         'mouseover': 'highlightItem',
@@ -19,7 +19,7 @@ define([
 
       initialize: function() {
         _.bindAll(this, 'render', 'highlightItem', 'displayNormalItem');
-        this.model.bind('change', this.render());
+        this.model.bind('change', this.render);
         this.displayNormalItem();
       },
 
@@ -28,9 +28,8 @@ define([
 
         var itemStars = this.model.get('stars');
         if (itemStars) {
-          // console.log('element:    ' + this.$el.find('.icon-stared'));
           this.$el.find('.icon-stared').addClass('item-stars-width' + this.model.get('stars'));
-          this.$el.find('.icon-stars-off').addClass('item-stars-width' + (5 - itemStars));
+          this.$el.find('.icon-stars-off').addClass('item-stars-width' + (this.MAX_STARS - itemStars));
         }
         return this;
       },
@@ -40,7 +39,7 @@ define([
       },
 
       displayNormalItem: function() {
-        this.$el.css(ItemConfig.normalDisplay);
+        //this.$el.css(ItemConfig.normalDisplay);
       }
     });
 

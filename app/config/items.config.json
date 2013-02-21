@@ -50,7 +50,8 @@
       "shortDescription" : "Men's Running Vigor Trail 2.0 Shoes",
       "image": "6.jpg",
       "customizeImg": "customize_item.png",
-      "prize": "$130.00"
+      "prize": "$130.00",
+      "stars": "0"
     },
     {
       "id" : "6",
@@ -58,7 +59,8 @@
       "shortDescription" : "Unisex Running Adizero XT 4 Shoes",
       "image": "7.jpg",
       "customizeImg": "customize_item.png",
-      "prize": "$130.00"
+      "prize": "$130.00",
+      "stars": "0"
     },
     {
       "id" : "7",
@@ -66,7 +68,8 @@
       "shortDescription" : "Men's Running Adizero Aegis 3 Shoes",
       "image": "8.jpg",
       "customizeImg": "customize_item.png",
-      "prize": "$130.00"
+      "prize": "$130.00",
+      "stars": "0"
     },
     {
       "id" : "8",
@@ -74,7 +77,8 @@
       "shortDescription" : "Contains objects shared across all cloud content",
       "image": "9.jpg",
       "customizeImg": "customize_item.png",
-      "prize": "$130.00"
+      "prize": "$130.00",
+      "stars": "0"
     },
     {
       "id" : "9",

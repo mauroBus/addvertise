@@ -10,9 +10,13 @@ define([
     var ItemModel = Backbone.Model.extend({
 
       defaults: {
-        title: 'nowhere',
-        description: 'nothing to do',
-        prize: 0
+        id: -1,
+        title: null,
+        shortDescription: null,
+        prize: 0,
+        image: null,
+        customizeImg: null,
+        stars: -1
       },
 
       initialize : function() {

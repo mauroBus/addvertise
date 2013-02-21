@@ -1,9 +1,7 @@
 .items-list li {
-  min-height: 289px;
+  min-height: 279px;
   margin-bottom: 10px;
-
   width: 180px;
-  /*height: auto;*/
 
   background-color: #fff;
   margin-right: 11px;
@@ -14,6 +12,55 @@
   margin-right: 24px;
   text-align: left;
   /*width: 170px;*/
+}
+
+/**************************************************/
+/* Item options */
+.item .item-options {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.item .item-options a {
+  font-size: 90% !important;
+}
+.item .item-description .item-options:hover {
+  cursor: pointer;
+}
+.item .item-description .item-options:hover a {
+  color: orange !important;
+}
+.item .item-options .options-separator {
+  position: relative;
+  right: 3%;
+  width: 106%;
+  border-bottom: 1px dotted #dcd5d5;
+  margin: 5px 0;
+}
+.item .logo-little {
+  background: url('../images/factory_logo.gif');
+  display: inline-block;
+  height: 18px;
+  width: auto;
+}
+.item .item-options .view-more-arrow {
+  color: red;
+}
+
+/**************************************************/
+/* Item Stars */
+.item-stars .icon-stars {
+  display: inline-block;
+  height: 8px;
+  position: relative;
+  top: 2px;
+}
+.items-list li .icon-stared {
+  background: url('../images/items/itemDisplays/orange_star.png');
+}
+.items-list li .icon-stars-off {
+  background: url('../images/items/itemDisplays/gray_star.png');
+  position: relative;
+  left: -3px;
 }
 
 .item-stars-width1 {
@@ -32,30 +79,19 @@
   width: 60px;
 }
 
-.items-list li .icon-stared {
-  background: url('../images/shoes/orange_star.png');
-}
-.items-list li .icon-stars-off {
-  background: url('../images/shoes/gray_star.png');
-  position: relative;
-  left: -3px;
-}
-
+/******************************************************/
+/* Item image */
 .items-list li a.item-image {
   margin: 0 5px 5px 5px;
   display: block;
   text-align: center;
 }
 
-.item-stars .icon-stars {
-  display: inline-block;
-  height: 8px;
-}
 
-.item-price {
+.item .item-price {
   float: right;
 }
-.items-list .item-value {
+.item .items-list .item-value {
 
 }
 

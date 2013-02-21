@@ -1,9 +1,9 @@
-<div class="place">
-  <a class="item-image" href="{{itemhref}}">
-    <img src="images/shoes/{{image}}" alt="image: {{title}}"></img>
+<div class="item">
+  <a class="item-image" href="#item{{id}}">
+    <img src="images/items/{{image}}" alt="image: {{title}}"></img>
     <div class="item-sub-image">
       {{#if customizeImg}}
-        <img src="images/shoes/{{customizeImg}}" alt="Customize It" height="14" width="97">
+        <img src="images/items/itemDisplays/{{customizeImg}}" alt="Customize It" height="14" width="97">
       {{/if}}
     </div>
   </a>
@@ -11,10 +11,11 @@
   <div class="item-description">
     <div class="item-options">
       <span class="logo-little"></span>
-      <a class="item-view-more" href="#">view larger and Morecolors</a>
+      <a class="item-view-more" href="#">view larger &amp; Morecolors <span class="view-more-arrow">&raquo;</span></a>
+      <div class="options-separator"></div>
     </div>
     <div class="item-title">
-      <a href="">{{title}}</a>
+      <a href="#item{{id}}">{{shortDescription}}</a>
     </div>
     <!-- <div class="item-description">{{shortDescription}}</div> -->
     <div class="item-value">

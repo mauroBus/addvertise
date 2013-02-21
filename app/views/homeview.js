@@ -21,16 +21,14 @@ define([
         this.items = this.options.items;
 
         this.itemsView = new ItemsCollectionView({
-          el: 'ul.items-list',
           collection: this.items
         });
-
-        this.render();
       },
 
       render: function() {
         this.$el.html(this.template());
-        this.itemsView.setElement('ul.items-list');
+        this.itemsView.setElement('div.items-container');
+        this.itemsView.render();
         return this;
       }
 

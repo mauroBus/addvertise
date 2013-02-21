@@ -17,10 +17,6 @@ define([
         _.bindAll(this, 'render', 'appendItem', 'clearElements');
         this.collection.bind('add', this.appendItem);
         this.collection.bind('reset', this.clearElements);
-
-        if (this.collection.length > 0) {
-          this.render();
-        }
       },
 
       clearElements: function() {
@@ -28,6 +24,7 @@ define([
       },
 
       render: function() {
+        this.$el.html(this.template());
         for (var item in this.collection.models) {
           this.appendItem(item);
         }
@@ -36,7 +33,7 @@ define([
 
       appendItem: function(item) {
         var newItemView = new ItemView({model: item});
-        this.$el.append(newItemView.render().el);
+        this.$el.find('ul.items-list').append(newItemView.render().el);
       }
     });
 
