@@ -121,7 +121,8 @@
 /* Item Details */
 .item-detail {
   /*width: 310px;*/
-  top: -50px;
+  /*top: -85px;*/
   background-color: white;
+  padding: 5px;
 }
 

@@ -28,7 +28,7 @@ define([
         this.home = new HomeView({el: 'body', 'items': this.items});
         this.home.render();
 
-        this.items.fetch({update: true, remove: false, add: true});
+        this.items.fetch({update: true, remove: true, add: true});
       },
 
       loadItemPage: function(item) {

@@ -23,7 +23,7 @@ define([
       },
 
       initialize: function() {
-        _.bindAll(this, 'render', 'highlightItem', 'displayNormalItem', 'viewMoreDetails', 'cancelViewMoreDetails');
+        _.bindAll(this, 'render', 'highlightItem', 'displayNormalItem', 'viewMoreDetails', 'cancelViewMoreDetails', 'createDetailsView');
         this.model.bind('change', this.render);
         this.displayNormalItem();
       },
@@ -71,16 +71,24 @@ define([
                 this.detailedView.fadeIn();
               }
               else {
-                this.detailedView = new ItemDetailedView({
-                  model: this.model,
-                  el: this.$el.find('.item-detailed-view')
-                });
-                //this.ItemDetailedView.setElement(this.$el.find('.item-detailed-view'));
-                this.detailedView.render();
+                this.createDetailsView();
               }
             }
           }, this
         ), 500);
+      },
+
+      createDetailsView: function() {
+        var left = this.$el.find('.item-view-more').offset().left;
+        var top = this.$el.find('.item-view-more').offset().top;
+        this.detailedView = new ItemDetailedView({
+          top: top,
+          left: left,
+          model: this.model,
+          el: this.$el.find('.item-detailed-view')
+        });
+        //this.ItemDetailedView.setElement(this.$el.find('.item-detailed-view'));
+        this.detailedView.render();
       },
 
       cancelViewMoreDetails: function() {
