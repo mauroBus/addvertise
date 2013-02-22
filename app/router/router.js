@@ -20,19 +20,35 @@ define([
       },
 
       items: null,
+      home: null,
 
       homePage : function() {
         this.items = new ItemCollection();
 
-        var home = new HomeView({el: 'body', 'items': this.items});
-        home.render();
+        this.home = new HomeView({el: 'body', 'items': this.items});
+        this.home.render();
 
         this.items.fetch({update: true, remove: false, add: true});
       },
 
       loadItemPage: function(item) {
         console.log('loading item page for item id:  ' + item);
-        this.items.get(item).set({'shortDescription': 'blablabla'});
+
+        if (!this.items) {
+          this.items = new ItemCollection();
+          var items = this.items;
+
+          var homePg = this.homePage;
+          items
+            .fetch({update: true, remove: false, add: true})
+            .done(function() {
+              homePg();
+              items.get(item).set({'shortDescription': 'blablabla'});
+            });
+        }
+        else {
+          this.items.get(item).set({'shortDescription': 'blablabla'});
+        }
       }
 
     });

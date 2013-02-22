@@ -1,0 +1,12 @@
+.modal-window {
+  position: relative;
+  background-color: white;
+  z-index: 50;
+  -webkit-box-shadow: 8px 11px 5px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    8px 11px 5px rgba(50, 50, 50, 0.5);
+  box-shadow:         8px 11px 5px rgba(50, 50, 50, 0.5);
+  border: 3px solid #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
