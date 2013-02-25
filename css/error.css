@@ -1,0 +1,12 @@
+.error-page {
+  text-align: center;
+}
+.error-title {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 3em;
+}
+.error-image img {
+  width: 250px;
+  height: auto;
+}

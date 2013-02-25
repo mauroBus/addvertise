@@ -92,7 +92,7 @@ define([
 
       createDetailsView: function() {
         var left = this.$el.find('.item-view-more').offset().left - 42;
-        var top = this.$el.find('.item-view-more').offset().top;
+        var top = this.$el.find('.item-view-more').offset().top - 200;
         this.detailedView = new ItemDetailedView({
           top: top,
           left: left,

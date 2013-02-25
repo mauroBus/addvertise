@@ -12,11 +12,15 @@
   margin-right: 24px;
   text-align: left;
   /*width: 170px;*/
-  border: 1px solid black;
+  border: 1px solid #CCC;
 }
 
-.items-list li .item {
-  height: 100%;
+.items-list li.item:hover {
+  -moz-box-shadow: #666666 0 0 6px;
+  -webkit-box-shadow: #666666 0 0 6px;
+  box-shadow:  #666666 0 0 6px;
+  border: 1px dashed white;
+  zoom:1;
 }
 
 /**************************************************/

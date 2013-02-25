@@ -2,19 +2,18 @@ define([
     'views/contentview',
     'hbs',
     'jquery',
-    'text!templates/fullitem.tpl.html'
-   ], function(ContentView, Handlebars, $, fullItemTemplate) {
+    'text!templates/error.tpl.html'
+   ], function(ContentView, Handlebars, $, errorTemplate) {
       var FullItemView = ContentView.extend({
 
-      template: Handlebars.compile(fullItemTemplate),
+      template: Handlebars.compile(errorTemplate),
 
       initialize: function() {
         _.bindAll(this, 'render');
       },
 
       render: function() {
-        console.log('rendering full item');
-        this.$el.html( this.template(this.model.toJSON()) );
+        this.$el.html(this.template());
         return this;
       }
     });

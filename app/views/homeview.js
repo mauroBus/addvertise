@@ -17,12 +17,12 @@ define([
       items: null,
 
       contentView: null,
+      oldContentView: null,
       headerView: null,
       footerView: null,
       filterView: null,
 
       contentContainer: 'div.content-container',
-      contentSecContainer: 'div.content-sec-container',
       headerContainer: 'div.header-container',
       footerContainer: 'div.footer-container',
       filterContainer: 'div.filter-container',
@@ -57,9 +57,17 @@ define([
       },
 
       contentTransition: function(newContentView) {
-        this.contentView.toBackground();
-        newContentView.setElement(this.contentSecContainer);
-        newContentView.render();
+        var _this = this;
+        this.contentView.transitionOut(function() {
+          newContentView.setElement(_this.contentContainer);
+          newContentView.transitionIn();
+          _this.oldContentView = _this.contentView;
+          _this.contentView = newContentView;
+        });
+      },
+
+      goContentBack: function() {
+        this.contentTransition(this.oldContentView);
       }
 
     });

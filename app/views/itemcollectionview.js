@@ -1,19 +1,19 @@
 define([
-    'backbone',
+    'views/contentview',
     'hbs',
     'jquery',
     //'jquerymobile',
     'views/itemview',
     'text!templates/items.tpl.html'
-   ], function(Backbone, Handlebars, $, ItemView, itemsTemplate) {
-      var ItemsCollectionView = Backbone.View.extend({
+   ], function(ContentView, Handlebars, $, ItemView, itemsTemplate) {
+      var ItemsCollectionView = ContentView.extend({
 
       template: Handlebars.compile(itemsTemplate),
 
       listEl: 'ul.items-list',
 
       initialize: function() {
-        _.bindAll(this, 'render', 'appendItem', 'clearElements', 'toBackground');
+        _.bindAll(this, 'render', 'appendItem', 'clearElements');
         this.collection.bind('add', this.appendItem);
         this.collection.bind('reset', this.clearElements);
       },
@@ -34,10 +34,6 @@ define([
       appendItem: function(item) {
         var newItemView = new ItemView({model: item});
         this.$el.find(this.listEl).append(newItemView.render().el);
-      },
-
-      toBackground: function() {
-        this.$el.fadeOut();
       }
     });
 

@@ -114,9 +114,10 @@ header .logo {
   float: left;
   width: 13%;
 }
-.content-container, .content-sec-container {
+.content-container {
   float: right;
   width: 87%;
+  min-width: 280px;
 }
 .footer-container {
   display: block;

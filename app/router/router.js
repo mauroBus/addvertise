@@ -9,9 +9,10 @@ define([
     'collections/itemcollection',
     // views
     'views/homeview',
-    'views/fullitemview'
+    'views/fullitemview',
+    'views/errorview'
   ],
-  function(Backbone, ItemModel, ItemCollection, HomeView, FullItemView) {
+  function(Backbone, ItemModel, ItemCollection, HomeView, FullItemView, ErrorView) {
 
     var AppRouter = Backbone.Router.extend({
 
@@ -25,19 +26,35 @@ define([
       home: null,
 
       homePage : function() {
-        this.items = new ItemCollection();
-        window.itemss = this.items;
+        if (!this.items) {
+          this.items = new ItemCollection();
 
-        this.home = new HomeView({el: 'body', 'items': this.items});
-        this.home.render();
+          this.home = new HomeView({el: 'body', 'items': this.items});
+          this.home.render();
 
-        this.items.fetch({update: true, remove: true, add: true});
+          this.items.fetch({update: true, remove: true, add: true});
+        }
+        else {
+          this.home.goContentBack();
+        }
+      },
+
+      transitionToItemView: function(item) {
+        var itemToLoad = this.items.get(item);
+        var itemView;
+        if (itemToLoad) {
+          itemView = new FullItemView({model: itemToLoad});
+        }
+        else {
+          itemView = new ErrorView();
+        }
+        this.home.contentTransition(itemView);
       },
 
       loadItemPage: function(item) {
         console.log('loading item page for item id:  ' + item);
 
-        if (!this.items) {
+        if (!this.items) { // first time, loading an item instead of the main view:
           this.items = new ItemCollection();
           var _this = this;
 
@@ -46,15 +63,11 @@ define([
             .done(function() {
               _this.home = new HomeView({el: 'body', 'items': _this.items});
               _this.home.render();
-              // it does not work ?
-              //_this.items.get(item).set({'shortDescription': 'blablabla'});
-              var fullItemView = new FullItemView({model: _this.items.get(item)});
-              _this.home.contentTransition(fullItemView);
+              _.bind(_this.transitionToItemView(item), _this);
             });
         }
         else {
-          var fullItemView = new FullItemView({model: this.items.get(item)});
-          this.home.contentTransition(fullItemView);
+          this.transitionToItemView(item);
         }
       },
 
