@@ -8,14 +8,16 @@ define([
     // collections
     'collections/itemcollection',
     // views
-    'views/homeview'
+    'views/homeview',
+    'views/fullitemview'
   ],
-  function(Backbone, ItemModel, ItemCollection, HomeView) {
+  function(Backbone, ItemModel, ItemCollection, HomeView, FullItemView) {
 
     var AppRouter = Backbone.Router.extend({
 
       routes : {
         'item:itemNumber': 'loadItemPage',
+        'customize:itemNumber': 'customizeItem',
         '*action': 'homePage'
       },
 
@@ -24,6 +26,7 @@ define([
 
       homePage : function() {
         this.items = new ItemCollection();
+        window.itemss = this.items;
 
         this.home = new HomeView({el: 'body', 'items': this.items});
         this.home.render();
@@ -36,19 +39,27 @@ define([
 
         if (!this.items) {
           this.items = new ItemCollection();
-          var items = this.items;
+          var _this = this;
 
-          var homePg = this.homePage;
-          items
+          this.items
             .fetch({update: true, remove: false, add: true})
             .done(function() {
-              homePg();
-              items.get(item).set({'shortDescription': 'blablabla'});
+              _this.home = new HomeView({el: 'body', 'items': _this.items});
+              _this.home.render();
+              // it does not work ?
+              //_this.items.get(item).set({'shortDescription': 'blablabla'});
+              var fullItemView = new FullItemView({model: _this.items.get(item)});
+              _this.home.contentTransition(fullItemView);
             });
         }
         else {
-          this.items.get(item).set({'shortDescription': 'blablabla'});
+          var fullItemView = new FullItemView({model: this.items.get(item)});
+          this.home.contentTransition(fullItemView);
         }
+      },
+
+      customizeItem: function(item) {
+        console.log('customizing item: ' + item);
       }
 
     });

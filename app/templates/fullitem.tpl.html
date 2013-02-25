@@ -1,0 +1,29 @@
+<a>
+  <img src="images/items/{{image}}" alt="image: {{title}}"></img>
+</a>
+<a href="#customize{{id}}">
+  {{#if customize}}
+    <img src="images/items/itemDisplays/customize_item.png" alt="Customize It" height="14" width="97">
+  {{/if}}
+</a>
+
+<div class="item-description">
+  <div class="item-options">
+    <span class="logo-little"></span>
+    <a class="item-view-more">view larger &amp; Morecolors <span class="view-more-arrow">&raquo;</span></a>
+    <div class="options-separator"></div>
+  </div>
+  <div class="item-title">
+    <a href="#item{{id}}">{{shortDescription}}</a>
+  </div>
+  <!-- <div class="item-description">{{shortDescription}}</div> -->
+  <div class="item-value">
+    <span class="item-stars">
+      {{#if stars}}
+        <span class="icon-stars icon-stared"></span>
+        <span class="icon-stars icon-stars-off"></span>
+      {{/if}}
+    </span>
+    <span class="item-price">{{prize}}</span>
+  </div>
+</div>

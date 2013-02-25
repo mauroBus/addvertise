@@ -102,3 +102,23 @@ header .logo {
   bottom: 8px;
   width: 40px;
 }
+
+
+
+/********************************************************************/
+
+.header-container {
+  display: block;
+}
+.filter-container {
+  float: left;
+  width: 13%;
+}
+.content-container, .content-sec-container {
+  float: right;
+  width: 87%;
+}
+.footer-container {
+  display: block;
+  clear: both;
+}

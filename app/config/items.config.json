@@ -4,8 +4,8 @@
       "id" : "0",
       "title" : "Necochea",
       "shortDescription" : "Men's Running Energy Boost Shoes",
-      "image": "1.jpg",
-      "customizeImg": "customize_item.png",
+      "image": "16.jpg",
+      "customize": "true",
       "prize": "$130.00",
       "stars": "3"
     },
@@ -13,7 +13,7 @@
       "id" : "1",
       "title" : "Punta del este",
       "shortDescription" : "Men's Running Supernova Glide 5 Shoes",
-      "image": "2.jpg",
+      "image": "17.jpg",
       "prize": "$130.00",
       "stars": "3"
     },
@@ -22,7 +22,7 @@
       "title" : "Mar del plata",
       "shortDescription" : "Men's Running mi Supernova Glide 5",
       "image": "3.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00",
       "stars": "3"
     },
@@ -30,8 +30,8 @@
       "id" : "3",
       "title" : "Miramar",
       "shortDescription" : "Men's Running Vigor Trail 2.0 Shoes",
-      "image": "4.jpg",
-      "customizeImg": "customize_item.png",
+      "image": "30.jpg",
+      "customize": "true",
       "prize": "$130.00",
       "stars": "5"
     },
@@ -40,7 +40,7 @@
       "title" : "Pinamar",
       "shortDescription" : "Unisex Running Adizero Takumi-Sen Shoes",
       "image": "5.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00",
       "stars": "2"
     },
@@ -49,7 +49,7 @@
       "title" : "Carilo",
       "shortDescription" : "Men's Running Vigor Trail 2.0 Shoes",
       "image": "6.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00",
       "stars": "0"
     },
@@ -58,7 +58,7 @@
       "title" : "Carilo",
       "shortDescription" : "Unisex Running Adizero XT 4 Shoes",
       "image": "7.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00",
       "stars": "0"
     },
@@ -67,7 +67,7 @@
       "title" : "Carilo",
       "shortDescription" : "Men's Running Adizero Aegis 3 Shoes",
       "image": "8.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00",
       "stars": "0"
     },
@@ -76,7 +76,7 @@
       "title" : "Carilo",
       "shortDescription" : "Contains objects shared across all cloud content",
       "image": "9.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00",
       "stars": "0"
     },
@@ -85,7 +85,7 @@
       "title" : "Carilo",
       "shortDescription" : "Contains objects shared across all cloud content",
       "image": "10.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00"
     },
     {
@@ -93,7 +93,7 @@
       "title" : "Carilo",
       "shortDescription" : "Contains objects shared across all cloud content",
       "image": "11.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00"
     },
     {
@@ -101,7 +101,7 @@
       "title" : "Carilo",
       "shortDescription" : "Contains objects shared across all cloud content",
       "image": "12.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
       "prize": "$130.00"
     },
     {
@@ -109,7 +109,31 @@
       "title" : "Carilo",
       "shortDescription" : "Contains objects shared across all cloud content",
       "image": "13.jpg",
-      "customizeImg": "customize_item.png",
+      "customize": "true",
+      "prize": "$130.00"
+    },
+    {
+      "id" : "13",
+      "title" : "Carilo",
+      "shortDescription" : "Contains objects shared across all cloud content",
+      "image": "33.jpg",
+      "customize": "true",
+      "prize": "$130.00"
+    },
+    {
+      "id" : "14",
+      "title" : "Carilo",
+      "shortDescription" : "Contains objects shared across all cloud content",
+      "image": "34.jpg",
+      "customize": "true",
+      "prize": "$130.00"
+    },
+    {
+      "id" : "15",
+      "title" : "Carilo",
+      "shortDescription" : "Contains objects shared across all cloud content",
+      "image": "35.jpg",
+      "customize": "true",
       "prize": "$130.00"
     }
   ]

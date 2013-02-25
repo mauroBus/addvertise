@@ -11,20 +11,29 @@ define([
       template: Handlebars.compile(itemTemplate),
 
       tagName: 'li',
+      class: 'item',
       MAX_STARS: 5,
       showDetails: null,
       detailedView: null,
 
       events: {
-        'mouseenter .item': 'highlightItem',
+        'mouseenter': 'highlightItem',
         'mouseenter .item-options': 'viewMoreDetails',
         'mouseleave .item-options': 'cancelViewMoreDetails',
         'mouseleave .item-image': 'displayNormalItem'
       },
 
+      attributes: function () {
+        return {
+          class : 'item'
+        };
+      },
+
       initialize: function() {
-        _.bindAll(this, 'render', 'highlightItem', 'displayNormalItem', 'viewMoreDetails', 'cancelViewMoreDetails', 'createDetailsView');
+        _.bindAll(this, 'render', 'highlightItem', 'displayNormalItem', 'viewMoreDetails',
+          'cancelViewMoreDetails', 'createDetailsView', 'removeView');
         this.model.bind('change', this.render);
+        this.model.bind('dispose', this.removeView);
         this.displayNormalItem();
       },
 
@@ -37,19 +46,22 @@ define([
           this.$el.find('.icon-stars-off').addClass('item-stars-width' + (this.MAX_STARS - itemStars));
         }
 
+        if (this.detailedView) {
+          this.detailedView.setElement(this.$el.find('.item-detailed-view'));
+        }
+
         return this;
       },
 
       highlightItem: function() {
         //this.$el.css(ItemConfig.highlightStyle);
-        //this.$el.find('.item-image').animate({'position': 'relative', 'top': '10px'}, 1500);
 
-        var img = this.$el.find('.item-image');
+        var img = this.$el.find('.item-image img');
 
         if (!img.is(':animated')) {
           //img.slideUp(1000);
-          img.animate({'width': '110%', 'height': 'auto'}, 500, function() {
-            img.animate({'width': '100%', 'height': 'auto'}, 500);
+          img.animate({'width': '96%', 'height': 'auto'}, 200, function() {
+            img.animate({'width': '100%', 'height': 'auto'}, 200);
           });
         }
       },
@@ -79,7 +91,7 @@ define([
       },
 
       createDetailsView: function() {
-        var left = this.$el.find('.item-view-more').offset().left;
+        var left = this.$el.find('.item-view-more').offset().left - 42;
         var top = this.$el.find('.item-view-more').offset().top;
         this.detailedView = new ItemDetailedView({
           top: top,
@@ -93,6 +105,16 @@ define([
 
       cancelViewMoreDetails: function() {
         this.showDetails = false;
+      },
+
+      removeView: function() {
+        delete tagName;
+        delete MAX_STARS;
+        delete showDetails;
+        if (this.detailedView) {
+          this.detailedView.remove();
+        }
+        this.remove();
       }
 
     });

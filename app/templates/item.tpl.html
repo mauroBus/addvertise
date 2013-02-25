@@ -1,11 +1,11 @@
-<div class="item">
+<div class="item1">
   <a class="item-image" href="#item{{id}}">
     <img src="images/items/{{image}}" alt="image: {{title}}"></img>
-    <div class="item-sub-image">
-      {{#if customizeImg}}
-        <img src="images/items/itemDisplays/{{customizeImg}}" alt="Customize It" height="14" width="97">
-      {{/if}}
-    </div>
+  </a>
+  <a class="item-customize" href="#customize{{id}}">
+    {{#if customize}}
+      <img src="images/items/itemDisplays/customize_item.png" alt="Customize It" height="14" width="97">
+    {{/if}}
   </a>
 
   <div class="item-description">
@@ -28,7 +28,9 @@
       <span class="item-price">{{prize}}</span>
     </div>
   </div>
+
+  <div class="item-detailed-view">
+</div>
 </div>
 
-<div class="item-detailed-view">
-</div>
+

@@ -10,30 +10,34 @@ define([
 
       template: Handlebars.compile(itemsTemplate),
 
-      events: {
-      },
+      listEl: 'ul.items-list',
 
       initialize: function() {
-        _.bindAll(this, 'render', 'appendItem', 'clearElements');
+        _.bindAll(this, 'render', 'appendItem', 'clearElements', 'toBackground');
         this.collection.bind('add', this.appendItem);
         this.collection.bind('reset', this.clearElements);
       },
 
       clearElements: function() {
-        this.$el.html('');
+        this.$el.find(this.listEl).html('');
       },
 
       render: function() {
         this.$el.html(this.template());
-        for (var item in this.collection.models) {
-          this.appendItem(item);
+        var models = this.collection.models;
+        for (var item in models) {
+          this.appendItem(models[item]);
         }
         return this;
       },
 
       appendItem: function(item) {
         var newItemView = new ItemView({model: item});
-        this.$el.find('ul.items-list').append(newItemView.render().el);
+        this.$el.find(this.listEl).append(newItemView.render().el);
+      },
+
+      toBackground: function() {
+        this.$el.fadeOut();
       }
     });
 

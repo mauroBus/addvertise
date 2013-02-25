@@ -17,7 +17,6 @@ define([
 
       initialize: function() {
         _.bindAll(this, 'render', 'fadeIn', 'fadeOut');
-        this.model.bind('change', this.render);
         this.top = this.options.top;
         this.left = this.options.left;
       },
