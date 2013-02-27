@@ -60,8 +60,8 @@ define([
 
         if (!img.is(':animated')) {
           //img.slideUp(1000);
-          img.animate({'width': '96%', 'height': 'auto'}, 200, function() {
-            img.animate({'width': '100%', 'height': 'auto'}, 200);
+          img.animate({'width': '97%', 'height': 'auto'}, 150, function() {
+            img.animate({'width': '100%', 'height': 'auto'}, 150);
           });
         }
       },
