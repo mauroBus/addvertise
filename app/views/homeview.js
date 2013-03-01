@@ -17,6 +17,7 @@ define([
       items: null,
 
       contentView: null,
+      mainContent: null,
       oldContentView: null,
       headerView: null,
       footerView: null,
@@ -36,6 +37,7 @@ define([
         this.contentView = new ItemsCollectionView({
           collection: this.items
         });
+        this.mainContent = this.contentView;
         this.headerView = new HeaderView();
         this.footerView = new FooterView();
         this.filterView = new FilterView();
@@ -66,8 +68,8 @@ define([
         });
       },
 
-      goContentBack: function() {
-        this.contentTransition(this.oldContentView);
+      showMainContent: function() {
+        this.contentTransition(this.mainContent);
       }
 
     });

@@ -11,7 +11,6 @@ define([
       template: Handlebars.compile(itemTemplate),
 
       tagName: 'li',
-      class: 'item',
       MAX_STARS: 5,
       showDetails: null,
       detailedView: null,
@@ -25,7 +24,7 @@ define([
 
       attributes: function () {
         return {
-          class : 'item'
+          'class' : 'item'
         };
       },
 

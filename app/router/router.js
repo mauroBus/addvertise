@@ -19,13 +19,22 @@ define([
       routes : {
         'item:itemNumber': 'loadItemPage',
         'customize:itemNumber': 'customizeItem',
-        '*action': 'homePage'
+        'back': 'goPageBack',
+        'forward': 'goPageForward',
+        '*default': 'homePage'
       },
 
       items: null,
       home: null,
+      pageHistory: [],
+      pageIndex: -1,
+
+      initialize: function() {
+      },
 
       homePage : function() {
+        this.storePage();
+
         if (!this.items) {
           this.items = new ItemCollection();
 
@@ -35,7 +44,7 @@ define([
           this.items.fetch({update: true, remove: true, add: true});
         }
         else {
-          this.home.goContentBack();
+          this.home.showMainContent();
         }
       },
 
@@ -52,6 +61,7 @@ define([
       },
 
       loadItemPage: function(item) {
+        this.storePage();
         console.log('loading item page for item id:  ' + item);
 
         if (!this.items) { // first time, loading an item instead of the main view:
@@ -73,6 +83,26 @@ define([
 
       customizeItem: function(item) {
         console.log('customizing item: ' + item);
+      },
+
+      goPageBack: function() {
+        var hashUrl = this.pageHistory[this.pageIndex - 1] ?
+          this.pageHistory[--this.pageIndex] : '/';
+        // var hashUrl = this.pageHistory[this.pageHistory.length - 1] || '/';
+        console.log('on page back:' + this.pageHistory + '- ' + hashUrl + ' *');
+        this.navigate(hashUrl, {trigger: true, replace: true});
+      },
+
+      goPageForward: function() {
+        var hashUrl = this.pageHistory[this.pageIndex + 1] ?
+          this.pageHistory[++this.pageIndex] : null;
+        this.navigate(hashUrl, {trigger: true, replace: true});
+      },
+
+      storePage: function() {
+        this.pageHistory[++this.pageIndex] = Backbone.history.fragment;
+        console.log('storing :');
+        console.log(this.pageHistory + ' ~ ' + this.pageIndex);
       }
 
     });
